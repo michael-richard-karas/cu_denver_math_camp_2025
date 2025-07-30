@@ -1,0 +1,415 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{amsmath}
+% \documentclass[aspectratio=43]{beamer}
+
+% Define `accent`/`accent2` colors for theme customization
+\definecolor{accent}{HTML}{006896}
+\definecolor{accent2}{HTML}{E64173}
+
+% Beamer theme
+\input{preamble.tex}
+
+% Title --------------------------------------------
+\title{CU Denver Math Camp - Limits \& Derivatives}
+\subtitle{Day 1}
+\date{August 4, 2025}
+\author{Michael R. Karas}
+
+\begin{document}
+
+% ------------------------------------------------------------------------------
+\begin{frame}
+\maketitle
+
+% \vspace{2.5mm}
+{\footnotesize University of Colorado, Boulder}
+\end{frame}
+% ------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{About Me}\label{main1}
+Michael Karas, PhD Candidate at CU Boulder
+\begin{itemize}
+	\begin{itemize}
+		\item michael.karas@colorado.edu
+		\item Entering my 5th year, will be on job market Fall 2025
+	\end{itemize}
+	\item Environmental Economics, Economic History, Industrial Organization, Applied Micro
+	\begin{itemize}
+		\item Development of the Gas Utility Industry
+			\begin{itemize}
+				\item The initial adoption of public utility commissions
+				\item Role of incumbent firms in the transition from manufactured gas to natural gas
+				\item The substitutability and complementarity between gas and electricity utilities
+				\item The development of block pricing tariffs in the industry
+			\end{itemize}
+	\end{itemize}
+	\item Teaching: Intermediate Microeconomics, Principles of Macroeconomics
+	\item Hobbies: Cycling, Skiing
+\end{itemize}
+
+\end{frame}
+%------------------------------------------------------------------------------
+
+
+%------------------------------------------------------------------------------
+\begin{frame}{Getting to Know Each Other}\label{main1}
+\begin{itemize}
+	\item{Name}
+	\item{Hometown}
+	\item{Interests in Economics}
+	\item{Hobbies or something about yourself}
+\end{itemize}
+
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Grad School Advice}\label{main1}
+\begin{itemize}
+	\item It will be challenging
+	\begin{itemize}
+		\item Everyone struggles, even the ``top" students
+		\item It may take a while to master the material, probably won't grasp everything on the first attempt
+	\item What matters is determination, discipline, and consistency: put the time in and the results will come
+	\item Treat it like a job
+\end{itemize}
+	\item Study Tips
+	\begin{itemize}
+	\item Practice makes perfect: get old homework/exam from upper students
+	\item Study with each other
+	\item Recognize when diminishing marginal returns start to set in and take a break
+	\end{itemize}
+	\item Don't neglect your mental health.  It's okay to take breaks.
+	\begin{itemize}
+		\item Have fun! CO is a great place, develop a life outside of school
+	\end{itemize}
+	\end{itemize}
+\end{itemize}
+
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Day 1 Topics}\label{main1}
+\begin{itemize}
+	\begin{itemize}
+		\item Limits
+		\item Limit Rules
+		\item Derivative Definition
+		\item Derivative Rules
+		\item Natural Log and Exponent Rules
+		\item Higher-order Derivatives
+	\end{itemize}
+\end{itemize}
+
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Limits}\label{main1}
+	The limit of \( f(x) \) as \( x \) approaches \( a \) is written as:
+\[
+\lim_{x \to a} f(x)
+\]
+\begin{itemize}
+\begin{itemize}
+	\item The behavior of the function as its input approaches \( a \)
+	\item In certain cases, can be evaluated by plugging in \( x = a \)
+	\item \( \lim_{x \to a} c = c \) for a constant \( c \)
+	\item \(\lim_{x \to a} x = a \) for a constant \( c \)
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Limits}\label{main1}
+The limit from the left and right are
+\begin{itemize}
+\begin{itemize}
+    \item \(\lim_{x \to a^-} f(x) = A\) “as \(x\) approaches \(a\) from the left (\(-\infty\))”
+    \item \(\lim_{x \to a^+} f(x) = A\) “as \(x\) approaches \(a\) from the right (\(\infty\))”
+\end{itemize}
+\end{itemize}
+If \(\lim_{x \to a^-} f(x) = A = \lim_{x \to a^+} f(x)\) then the limit exists and we write
+\[
+\lim_{x \to a} f(x) = A
+\]
+\begin{itemize}
+    \item Note: the limit does not exist if \(A = \pm\infty\), even if the left and right limit both equal \(\pm\infty\)
+\end{itemize}
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Limits}\label{main1}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.6\textwidth]{/Users/michaelkaras/Library/CloudStorage/OneDrive-UCB-O365/class_materials/cu_denver_math_camp_2024/limits_example.jpg}
+    \end{figure}
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Limit Rules}\label{main1}
+    \[
+    \lim_{x \to a} f(x) = L \quad \lim_{x \to a} g(x) = M
+    \]
+    \vspace{1em}
+    \begin{itemize}
+        \item \textbf{Constant Multiple Rule:} \quad $\lim_{x \to a} [a f(x)] = a L$
+        \item \textbf{Sum/Difference Rule:} \quad $\lim_{x \to a} [f(x) \pm g(x)] = L \pm M$
+        \item \textbf{Product Rule:} \quad $\lim_{x \to a} [f(x) \cdot g(x)] = L \cdot M$
+        \item \textbf{Quotient Rule:} \quad $\lim_{x \to a} \left[ \frac{f(x)}{g(x)} \right] = \frac{L}{M}, \quad M \neq 0$
+        \item \textbf{Power Rule:} \quad $\lim_{x \to a} [(f(x))^n] = L^n, \quad n > 0$
+    \end{itemize}
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Limit Practice Problems}\label{main1}
+    \vspace{-4cm}
+    \[
+    \lim_{x \to 0} (3 + 2x^{2})
+    \]
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Limit Practice Problems}\label{main1}
+	\vspace{-4cm}
+    \[
+    \lim_{x \to 1} \frac{x^{2} + 7x - 8}{x - 1} 
+    \]
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Definition of a Derivative}\label{main1}
+The derivative of \(f\) is defined as
+\[
+f'(x) = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h}
+\]
+If this limit exists, then we say \(f\) is differentiable at \(x\).
+\begin{itemize}
+	\begin{itemize}
+    \item Find \(f(x + h)\). Ex: \(f(x) = x^2\), \(f(x + h) = (x + h)^2 = x^2 + 2xh + h^2\)
+    \item Find \(f(x + h) - f(x)\)
+    \item Find \(\frac{f(x + h) - f(x)}{h}\) and simplify until \(h = 0\) doesn’t divide by 0
+    \item Plug-in \(h = 0\) to determine the limit
+    \end{itemize}
+\end{itemize}
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Definition of a Derivative Practice Problems}\label{main1}
+	\vspace{-4cm}
+    \[
+    f(x) = x^{2}
+    \]
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Derivative Notation}\label{main1}
+All of these mean “take the derivative of \(f\) with respect to \(x\)”:
+\begin{itemize}
+\begin{itemize}
+    \item \(f'(x)\)
+    \item \(\frac{df(x)}{dx}\)
+    \item \(\frac{d}{dx} f(x)\)
+    \item \(\frac{dy}{dx}\) if \(y = f(x)\)
+    \item \(y'\) (sometimes)
+    \item \( \dot{y} \) (particularly in Macro)
+\end{itemize}
+\end{itemize}
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Derivative Rules}\label{main1}
+Let \(f(x)\) and \(g(x)\) be differentiable functions:
+\begin{itemize}
+    \item \textbf{Derivative of a Constant:} \(f(x) = c\), \(f'(x) = 0\)
+    \item \textbf{“Power Rule”:} \(f(x) = x^n\), \(f'(x) = nx^{n-1}\) 
+    \item \textbf{Sum/Difference Rule:} \quad $\frac{d}{dx} [f(x) \pm g(x)] = f'(x) \pm g'(x)$
+    \item \textbf{Product Rule:} \quad $\frac{d}{dx} [f(x) \cdot g(x)] = f'(x) \cdot g(x) + f(x) \cdot g'(x)$
+    \item \textbf{Quotient Rule:} \quad $\frac{d}{dx} \left( \frac{f(x)}{g(x)} \right) = \frac{f'(x) \cdot g(x) - f(x) \cdot g'(x)}{[g(x)]^2}$
+    \item \textbf{Chain Rule:} \quad $\frac{d}{dx} f(g(x)) = f'(g(x)) \cdot g'(x)$
+\end{itemize}
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Derivative Practice Problems}\label{main1}
+	\vspace{-4cm}
+    \[
+    f(x) = 9x^{10}
+    \]
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Derivative Practice Problems}\label{main1}
+	\vspace{-4cm}
+    \[
+    f(x) = 8x^{4} + 2 \sqrt{x}
+    \]
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Derivative Practice Problems}\label{main1}
+	\vspace{-4cm}
+    \[
+    f(x) = \sqrt{x} * 6x^{4}
+    \]
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Derivative Practice Problems}\label{main1}
+	\vspace{-4cm}
+    \[
+    f(x) = \frac{x + 1}{x - 1}
+    \]
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Derivative Practice Problems}\label{main1}
+	\vspace{-4cm}
+    \[
+    f(x) = 5u^{4} ; u = 1 + x^{2}
+    \]
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Properties of Exponents}\label{main1}
+Let $a$ and $b$ be real numbers and $m$ and $n$ be integers. Then the following properties of exponents hold, provided that all of the expressions appearing in a particular equation are defined:
+\begin{itemize}
+\begin{itemize}
+    \item $a^m a^n = a^{m+n}$
+    \item $(a^m)^n = a^{mn}$
+    \item $(ab)^m = a^m b^m$
+    \item $\frac{a^m}{a^n} = a^{m-n}$, $a \neq 0$
+    \item $\left(\frac{a}{b}\right)^m = \frac{a^m}{b^m}$, $b \neq 0$
+    \item $a^{-m} = \frac{1}{a^m}$, $a \neq 0$
+    \item $a^{\frac{1}{n}} = \sqrt[n]{a}$
+    \item $a^0 = 1$, $a \neq 0$
+    \item $a^{\frac{m}{n}} = \sqrt[n]{a^m} = \left(\sqrt[n]{a}\right)^m$
+\end{itemize}
+\end{itemize}
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Derivative Practice Problems}\label{main1}
+	\vspace{-4cm}
+    \[
+    f(x) = \frac{x + 1}{x^{5}}
+    \]
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Properties of Natural Log}\label{main1}
+Note that logs are only defined for positive values of x:
+\begin{itemize}
+\begin{itemize}
+    \item $\ln(xy) = \ln(x) + \ln(y)$
+    \item $\ln\left(\frac{x}{y}\right) = \ln(x) - \ln(y)$
+    \item $\ln(x^y) = y \cdot \ln(x)$
+    \item $\ln(e^x) = x$
+    \item $e^{\ln(x)} = x$
+    \item $\ln(e) = 1$
+    \item $\ln(1) = 0$
+    \item $\ln(1) = undefined$
+\end{itemize}
+\end{itemize}
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Derivative Rules for Exponents and Natural Log}\label{main1}
+\begin{itemize}
+\begin{itemize}
+    \item \(f(x) = e^x\), \(f'(x) = e^x\)
+    \item \(f(x) = \ln(x)\), \(f'(x) = \frac{1}{x}\)
+\end{itemize}
+\end{itemize}
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Natural Log/Exponent Derivative Practice Problems}\label{main1}
+	\vspace{-4cm}
+    \[
+    f(x) = 3x^{2}*ln(x)
+    \]
+\end{frame}
+%------------------------------------------------------------------------------
+
+
+%------------------------------------------------------------------------------
+\begin{frame}{Natural Log/Exponent Derivative Practice Problems}\label{main1}
+	\vspace{-4cm}
+    \[
+    f(x) = x^{4}*e^{x}
+    \]
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Natural Log/Exponent Derivative Practice Problems}\label{main1}
+	\vspace{-4cm}
+    \[
+    f(x) = e^{x}*(1-x)^{4}
+    \]
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Higher-order Derivatives}\label{main1}
+The second-order derivative is
+
+\[
+f''(x) = \frac{d}{dx} f'(x)
+\]
+
+We could keep differentiating as long as the last derivative is differentiable. Notation:
+\begin{itemize}
+\begin{itemize}
+    \item $f''(x)$
+    \item $\frac{d^2 f(x)}{dx^2}$
+    \item $\frac{d^2}{dx^2} f(x)$
+    \item $\frac{d^2 y}{dx^2}$ if $y = f(x)$
+    \item $y''$ (sometimes)
+\end{itemize}
+\end{itemize}
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Topics for Tomorrow}\label{main1}
+
+\begin{itemize}
+	\begin{itemize}
+		\item Increasing/Decreasing Functions
+		\item Concave/Convex Functions
+		\item Implicit Differentiation
+		\item Partial Derivatives
+		\item Taylor Series
+	\end{itemize}
+\end{itemize}
+\end{frame}
+%------------------------------------------------------------------------------
+
+\end{document}
