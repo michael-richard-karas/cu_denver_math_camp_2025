@@ -13,7 +13,7 @@
 \input{preamble.tex}
 
 % Title --------------------------------------------
-\title{CU Denver Math Camp - Limits \& Derivatives}
+\title{2025 CU Denver Math Camp - Limits \& Derivatives}
 \subtitle{Day 1}
 \date{August 4, 2025}
 \author{Michael R. Karas}
@@ -44,7 +44,7 @@ Michael Karas, PhD Candidate at CU Boulder
 				\item The initial adoption of public utility commissions
 				\item Role of incumbent firms in the transition from manufactured gas to natural gas
 				\item The substitutability and complementarity between gas and electricity utilities
-				\item The development of block pricing tariffs in the industry
+				\item The spread of block pricing tariffs in the gas industry
 			\end{itemize}
 	\end{itemize}
 	\item Teaching: Intermediate Microeconomics, Principles of Macroeconomics
@@ -120,7 +120,6 @@ Michael Karas, PhD Candidate at CU Boulder
 	\item The behavior of the function as its input approaches \( a \)
 	\item In certain cases, can be evaluated by plugging in \( x = a \)
 	\item \( \lim_{x \to a} c = c \) for a constant \( c \)
-	\item \(\lim_{x \to a} x = a \) for a constant \( c \)
 \end{itemize}
 \end{itemize}
 
@@ -217,6 +216,15 @@ If this limit exists, then we say \(f\) is differentiable at \(x\).
 %------------------------------------------------------------------------------
 
 %------------------------------------------------------------------------------
+\begin{frame}{Definition of a Derivative Practice Problems}\label{main3}
+    \vspace{-4cm}
+    \[
+    f(x) = 3x + 1
+    \]
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
 \begin{frame}{Derivative Notation}\label{main1}
 All of these mean “take the derivative of \(f\) with respect to \(x\)”:
 \begin{itemize}
@@ -243,6 +251,60 @@ Let \(f(x)\) and \(g(x)\) be differentiable functions:
     \item \textbf{Quotient Rule:} \quad $\frac{d}{dx} \left( \frac{f(x)}{g(x)} \right) = \frac{f'(x) \cdot g(x) - f(x) \cdot g'(x)}{[g(x)]^2}$
     \item \textbf{Chain Rule:} \quad $\frac{d}{dx} f(g(x)) = f'(g(x)) \cdot g'(x)$
 \end{itemize}
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Example: Derivative of a Constant}\label{const_rule}
+	\vspace{-4cm}    
+    \[
+    f(x) = 5
+    \]
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Example: Power Rule}\label{power_rule}
+	\vspace{-4cm}
+    \[
+    f(x) = x^3
+    \]
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Example: Sum/Difference Rule}\label{sum_diff_rule}
+	\vspace{-4cm}
+    \[
+    f(x) = x^2 + 4x
+    \]
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Example: Product Rule}\label{product_rule}
+	\vspace{-4cm}
+    \[
+    f(x) = x \cdot (x + 2)
+    \]
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Example: Quotient Rule}\label{quotient_rule}
+	\vspace{-4cm}
+    \[
+    f(x) = \frac{x}{x+1}
+    \]
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Example: Chain Rule}\label{chain_rule}
+	\vspace{-4cm}
+    \[
+    f(x) = (3x + 1)^2
+    \]
 \end{frame}
 %------------------------------------------------------------------------------
 
@@ -311,15 +373,6 @@ Let $a$ and $b$ be real numbers and $m$ and $n$ be integers. Then the following 
 %------------------------------------------------------------------------------
 
 %------------------------------------------------------------------------------
-\begin{frame}{Derivative Practice Problems}\label{main1}
-	\vspace{-4cm}
-    \[
-    f(x) = \frac{x + 1}{x^{5}}
-    \]
-\end{frame}
-%------------------------------------------------------------------------------
-
-%------------------------------------------------------------------------------
 \begin{frame}{Properties of Natural Log}\label{main1}
 Note that logs are only defined for positive values of x:
 \begin{itemize}
@@ -331,9 +384,27 @@ Note that logs are only defined for positive values of x:
     \item $e^{\ln(x)} = x$
     \item $\ln(e) = 1$
     \item $\ln(1) = 0$
-    \item $\ln(1) = undefined$
+    \item $\ln(0) = undefined$
 \end{itemize}
 \end{itemize}
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Log and Exponent Practice Problems}\label{main1}
+	\vspace{-4cm}
+	\[
+	2e^{6x} = 18
+	\]
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Log and Exponent Practice Problems}\label{main1}
+	\vspace{-4cm}
+	\[
+	e^{x^{2}} = 1
+	\]
 \end{frame}
 %------------------------------------------------------------------------------
 
@@ -341,8 +412,14 @@ Note that logs are only defined for positive values of x:
 \begin{frame}{Derivative Rules for Exponents and Natural Log}\label{main1}
 \begin{itemize}
 \begin{itemize}
-    \item \(f(x) = e^x\), \(f'(x) = e^x\)
-    \item \(f(x) = \ln(x)\), \(f'(x) = \frac{1}{x}\)
+    \item \(f(x) = e^{h(x)}\), \(f'(x) = e^{h(x)} h'(x)\)
+    \begin{itemize}
+		\item \(f(x) = e^x\), \(f'(x) = e^x\)
+	\end{itemize}
+    \item \(f(x) = \ln(h(x))\), \(f'(x) = \frac{h'(x)}{h(x)}\)
+	\begin{itemize}
+		\item \(f(x) = \ln(x)\), \(f'(x) = \frac{1}{x}\)
+	\end{itemize}
 \end{itemize}
 \end{itemize}
 \end{frame}

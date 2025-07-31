@@ -12,7 +12,7 @@
 \input{preamble.tex}
 
 % Title --------------------------------------------
-\title{CU Denver Math Camp - Limits \& Derivatives}
+\title{2025 CU Denver Math Camp - Limits \& Derivatives}
 \subtitle{Day 2}
 \date{August 5, 2025}
 \author{Michael R. Karas}
@@ -36,7 +36,7 @@
 		\item Practice Problems		
 		\item Increasing/Decreasing Functions
 		\item Concave/Convex Functions
-		\item Implicit Differentiation
+		\item Critical Points
 		\item Partial Derivatives
 		\item Taylor Series
 	\end{itemize}
@@ -125,7 +125,7 @@
 \begin{frame}{Increasing/Decreasing Functions Practice Problems}\label{main1}
 	\vspace{-4cm}
      \[
-    f(x) = e^{x}
+    f(x) = -x^2 + 4x
     \]
     Find which intervals which \( f(x) \) is increasing and which intervals which \( f(x) \) is decreasing.
 \end{frame}
@@ -158,51 +158,46 @@
 \begin{frame}{Concave/Convex Functions Practice Problems}\label{main1}
 	\vspace{-4cm}
      \[
-    f(x) = x - 2ln(x+1)
+    f(x) = -x^2 + 4
     \]
 \end{frame}
 %------------------------------------------------------------------------------
 
 %------------------------------------------------------------------------------
-\begin{frame}{Implicit Differentiation}\label{main1}
-    Sometimes we can’t solve for $y = f(x)$ (or it would be very difficult) but still need to differentiate. Implicit differentiation allows us to find $f'(x)$ without a “closed-form” solution for $y = f(x)$.
+\begin{frame}{Critical Points}\label{main1}
+    One of the major uses of calculus is to find and characterize the maxima and minima of functions (such as maximizing utility and profit or minimizing costs)
     \begin{itemize}
+    \item Maxima
     \begin{itemize}
-        \item Differentiate both sides of the equation using all the typical rules of derivatives, treating $x$ and $y$ as variables that are both changing
-        \item If you differentiate something involving $y$, multiply the answer by $y'$ (the derivative of $y = f(x)$)
-        \item If you differentiate something involving $x$, do not multiply by anything new
-        \item After everything is differentiated, solve for $y'$ using algebra
-        \item The answer for $y'$ should be a function of $x$ (and potentially $y$)
+        \item Local maximum at $x_0$ if $f(x) \leq f(x_0)$ for all $x$ in some open interval containing $x_0$ 
+        \item Global if $f(x) \leq F(x_0)$ for all $x$ for the domain of $x_0$ 
+    \end{itemize}
+    \item Minima
+   \begin{itemize}
+        \item Local maximum at $x_0$ if $f(x) \geq f(x_0)$ for all $x$ in some open interval containing $x_0$ 
+        \item Global if $f(x) \geq F(x_0)$ for all $x$ for the domain of $x_0$ 
     \end{itemize}
     \end{itemize}
 \end{frame}
 %------------------------------------------------------------------------------
 
 %------------------------------------------------------------------------------
-\begin{frame}{Implicit Differentiation}\label{main1}
-    Suppose $x + y + xy = 5$.
-    \[
-    1 + 1 \cdot y' + \underbrace{1 \cdot y}_{f'(x)g(x)} + \underbrace{x \cdot 1 \cdot y'}_{f(x)g'(x)} = 0
-    \]
-    Using product rule:
-    \[
-    1 + y' + y + xy' = 0
-    \]
-    \[
-    y'(1 + x) = -1 - y
-    \]
-    \[
-    y' = \frac{-1 - y}{1 + x}
-    \]
-    The derivative is a function of both $x$ and $y$.
+\begin{frame}{Critical Points}\label{main1}
+    \begin{itemize}
+    \begin{itemize}
+        \item If $f'(x_0) = 0$ and $f''(x_0) < 0$, then $x_0$ is a max of $f()$
+        \item If $f'(x_0) = 0$ and $f''(x_0) > 0$, then $x_0$ is a min of $f()$
+        \item If $f'(x_0) = 0$ and $f''(x_0) = 0$, then $x_0$ can be a max, a min, or neither of $f()$
+    \end{itemize}
+    \end{itemize}
 \end{frame}
 %------------------------------------------------------------------------------
 
 %------------------------------------------------------------------------------
-\begin{frame}{Implicit Differentiation Practice Problems}\label{main1}
+\begin{frame}{Critical Points Example}\label{main1}
 	\vspace{-4cm}
      \[
-    x^{2} + y^{2} = 1
+    f(x) = x^4 - 4x^3 + 4x^2 + 4
     \]
 \end{frame}
 %------------------------------------------------------------------------------
@@ -243,6 +238,33 @@
  	Suppose $z = x + y + xy$, find $\frac{\partial z}{\partial x}$.
     \[
     \frac{\partial z}{\partial x} = \frac{\partial}{\partial x} [x + y + xy] = \frac{\partial}{\partial x} x + \frac{\partial}{\partial x} y + \frac{\partial}{\partial x} xy = 1 + 0 + y \cdot 1 = 1 + y
+    \]
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Partial Derivatives Practice Problems}
+    \vspace{-4cm}
+    \[
+    f(x, y) = 3x + 2y
+    \]
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Partial Derivatives Practice Problems}
+    \vspace{-4cm}
+    \[
+    f(x, y) = x^2 + 4y^2 + xy
+    \]
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Partial Derivatives Practice Problems}
+    \vspace{-4cm}
+    \[
+    f(x, y) = \frac{1}{y} + x^2y - 3xy^2
     \]
 \end{frame}
 %------------------------------------------------------------------------------
