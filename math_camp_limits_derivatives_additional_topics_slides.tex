@@ -1,0 +1,190 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+% \documentclass[aspectratio=43]{beamer}
+
+% Define `accent`/`accent2` colors for theme customization
+\definecolor{accent}{HTML}{006896}
+\definecolor{accent2}{HTML}{E64173}
+
+% Beamer theme
+\input{preamble.tex}
+
+% Title --------------------------------------------
+\title{CU Denver Math Camp - Limits \& Derivatives}
+\subtitle{Additional Topics}
+\date{August 5, 2024}
+\author{Michael R. Karas}
+
+\begin{document}
+
+% ------------------------------------------------------------------------------
+\begin{frame}
+\maketitle
+
+% \vspace{2.5mm}
+{\footnotesize University of Colorado, Boulder}
+\end{frame}
+% ------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Additional Topics}\label{main1}
+
+\begin{itemize}
+	\begin{itemize}
+		\item Integral Calculus	
+		\item Sets and Numbers
+	\end{itemize}
+\end{itemize}
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Integral Calculus}\label{main1}
+	An antiderivative of a function $f(x)$ is a function $F(x)$ whose derivative is the original $F:F' = f$
+\begin{itemize}
+	\begin{itemize}
+		\item The function $F$ is also called the indefinite integral of $f$, $F(x) = \int f(x) dx$
+	\end{itemize}
+\end{itemize}
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Integral Rules}\label{main1}
+\begin{itemize}
+	\begin{itemize}
+		\item $\int k \, dx = kx + C \quad $ where $k$ is a constant
+		\item $\int x^n \, dx = \frac{x^{n+1}}{n+1} + C$ for $n \ne -1$
+		\item $ \int a \cdot f(x)\, dx = a \int f(x)\, dx $
+		\item $ \int [f(x) \pm g(x)]\, dx = \int f(x)\, dx \pm \int g(x)\, dx $
+		\item $ \int \frac{1}{x} \, dx = \ln|x| + C $
+		\item $ \int e^x \, dx = e^x + C $
+		\item Integration by parts
+		\begin{itemize}
+			\item $ \int u(x) v'(x) \, dv = u(x) v(x) - \int u'(x) v(x) \, du $
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Indefinite Integral Example}
+Evaluate the following:
+\[
+\int (3x^2 + 2x + 1) \, dx
+\]
+
+Apply the addition rule:
+\[
+\int 3x^2 \, dx + \int 2x \, dx + \int 1 \, dx
+\]
+
+Apply the power rule:
+\[
+\int x^n \, dx = \frac{x^{n+1}}{n+1} + C
+\]
+
+Integrate each term:
+\[
+3 \cdot \frac{x^3}{3} + 2 \cdot \frac{x^2}{2} + x + C
+\]
+\[
+x^3 + x^2 + x + C
+\]
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Fundamental Theorem of Calculus}\label{main1}
+	For numbers $a$ and $b$, the definite integral of $f(x)$ from $a$ to $b$ is $F(b) - F(a)$, where $F(x)$ is an antiderivative of $f$.
+\begin{itemize}
+	\begin{itemize}
+		\item $\int_a^b f(x) \, dx = F(b) - F(a)$ where $F' = f$
+	\end{itemize}
+	\item The Fundamental Theorem of Calculus states that if we iterate each time dividing $[a,b]$ into smaller and smaller sub-intervals, in the limit we obtain the definite integral $\int_a^b f(x) \, dx$
+		\begin{itemize}
+		\item $\lim_{\Delta \to 0} \sum_{i=1}^{N} f(x_{i})\Delta = \int_a^b f(x) \, dx$
+	\end{itemize}
+\end{itemize}
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Sets}\label{main1}
+	A set is any well-specified collection of elements
+\begin{itemize}
+	\begin{itemize}
+		\item For any set $A$, we write $a \in A$ to indicate $a$ is a member of set $A$, and $a \notin A$ to indicate that $a$ is not in the set $A$
+		\item A set which contains no elements is called the empty set or null set and is denoted by $\varnothing$
+		\item Example of standard notation for sets: the set of all non-negative numbers is written as
+		\begin{itemize}
+			\item $ R_{+} \equiv \{x \in R : x \geq 0 \} $
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Operations with Sets}\label{main1}
+\begin{itemize}
+	\begin{itemize}
+		\item $A \cup B$, spoken "$A$ union $B$," is the set of all elements that are either in $A$ or in $B$ (or in both)
+		\begin{itemize}
+			\item $A \cup B \equiv \{ x : x \in A $ or $ x \in B \} $
+		\end{itemize}
+	\item $A \cap B$, spoken "$A$ intersect $B$," is the set of all elements that are common to both $A$ and $B$
+		\begin{itemize}
+			\item $A \cap B \equiv \{ x : x \in A $ and $ x \in B \} $
+		\end{itemize}
+	\item $A - B$, or sometimes $A \setminus B$, spoken "$A$ minus $B$," is the set of all elements of $A$ that are not in $B$
+		\begin{itemize}
+			\item $A - B \equiv \{ x : x \in A $ and $ x \notin B \} $
+		\end{itemize}
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Number Sets}
+\begin{itemize}
+    \item \textbf{Natural Numbers} (\( \mathbb{N} \)):\\
+    \[
+    \mathbb{N} = \{1, 2, 3, 4, \dots\}
+    \]
+    The set of positive whole numbers.
+
+    \item \textbf{Integers} (\( \mathbb{Z} \)):\\
+    \[
+    \mathbb{Z} = \{\dots, -3, -2, -1, 0, 1, 2, 3, \dots\}
+    \]
+    The set of whole numbers including negative numbers and zero.
+\end{itemize}
+\end{frame}
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Number Sets}
+\begin{itemize}
+    \item \textbf{Rational Numbers} (\( \mathbb{Q} \)):\\
+    \[
+    \mathbb{Q} = \left\{ \frac{a}{b} \mid a, b \in \mathbb{Z}, b \neq 0 \right\}
+    \]
+    Numbers that can be expressed as a fraction of two integers.
+
+    \item \textbf{Real Numbers} (\( \mathbb{R} \)):\\
+    \[
+    \mathbb{R} = \text{All points on the number line, including rationals and irrationals}
+    \]
+    Includes rational and irrational numbers such as \( \pi \), \( \sqrt{2} \).
+
+\end{itemize}
+\end{frame}
+%------------------------------------------------------------------------------
+
+
+\end{document}

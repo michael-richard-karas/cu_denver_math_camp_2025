@@ -2,7 +2,22 @@
 \usepackage{booktabs}
 \usepackage{graphicx}
 \usepackage{adjustbox}
-% \documentclass[aspectratio=43]{beamer}
+\newcommand{\imageframe}[1]{%
+    \begin{frame}[plain]
+        \begin{tikzpicture}[remember picture, overlay]
+            \node[at = (current page.center), xshift = 0cm] (cover) {%
+                \includegraphics[keepaspectratio, width=\paperwidth, height=\paperheight]{#1}
+            };
+        \end{tikzpicture}
+    \end{frame}%
+}
+\usepackage{subfigure}
+\usepackage{cancel}
+\usepackage{tikz}          % For drawing figures
+\usepackage{pgfplots}      % For creating the axis and plots inside tikzpicture
+\pgfplotsset{compat=1.17}  % Set compatibility level for pgfplots; adjust if necessary
+\usepackage{xcolor}        % For color definitions like 'alice!50!white'
+
 
 % Define `accent`/`accent2` colors for theme customization
 \definecolor{accent}{HTML}{006896}
@@ -222,6 +237,93 @@
     \]
 \end{frame}
 %------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+\begin{frame}{Functions of Multiple Input Variables}\label{main1}
+    The function $z = f(x, y)$ takes two inputs and outputs a third.
+    \begin{itemize}
+        \item Functions of multiple variables assign a number from $R^n$ to a number in $R^1$, where $n$ is the number of input variables
+        \item Ex. utility functions mapping the quantities of two goods to a utility value
+        \begin{itemize}
+        \item $u(x,y) = 4x^{\frac{1}{2}}y^{\frac{1}{2}}$
+    	\end{itemize}
+    	\item Graphically, these are often represented as level curves
+    \end{itemize}
+\end{frame}
+%------------------------------------------------------------------------------
+
+% ------------------------------------------------------------------------------------------------
+\begin{frame}{Functions of Multiple Input Variables}\label{main1}
+  \begin{figure}
+    \caption{Indifference Curves}
+    \includegraphics[width= 0.45\linewidth]{/Users/michaelkaras/Library/CloudStorage/OneDrive-UCB-O365/class_materials/cu_denver_math_camp_2025/fig3_4.JPG}
+  \end{figure}
+\end{frame}
+% ------------------------------------------------------------------------------------------------
+
+% ------------------------------------------------------------------------------------------------
+\begin{frame}
+  \vspace{-5mm}
+  \begin{figure}
+    \caption{Indifference Curves in 2D}
+    
+    \begin{tikzpicture}
+      \begin{axis}[
+        width = 10cm,
+        height = 8cm,
+        xmin = 0, xmax = 12,
+        ymin = 0, ymax = 12,
+        axis lines = left,
+        xtick = {2, 4, 6, 8, 10}, 
+        ytick = {2, 4, 6, 8, 10},
+        x label style={at={(axis description cs:0.5,-0.07)},anchor=north},
+        y label style={at={(axis description cs:-0.07,.5)},anchor=south},
+        xlabel = {\small $x$, units of food},
+        ylabel = {\small $y$, units of clothing},
+        clip = false,
+      ]
+        % Indifference curve
+        \addplot[domain = 0:12, restrict y to domain = 0:12, samples = 400, color = alice!25!white, thick]{4/x};
+        \node [right,color=alice!25!white] at (axis cs: 12, 4/12) {$U = 2$};
+        
+        \addplot[domain = 0:12, restrict y to domain = 0:12, samples = 400, color = alice!50!white, thick]{16/x};
+        \node [right,color=alice!50!white] at (axis cs: 12, 16/12) {$U = 4$};
+
+        \addplot[domain = 0:12, restrict y to domain = 0:12, samples = 400, color = alice!75!white, thick]{36/x};
+        \node [right,color=alice!75!white] at (axis cs: 12, 3) {$U = 6$};
+        % the published did this wrong, but I'm keeping it to match the last figure
+        
+        \addplot[domain = 0:12, restrict y to domain = 0:12, samples = 400, color = alice!100!white, thick]{64/x};
+        \node [right,color=alice!100!white] at (axis cs: 12, 64/12) {$U = 8$}; 
+        % the published did this wrong, but I'm keeping it to match the last figure
+
+        % Labels
+        \node [anchor = north east] at (current axis.right of origin) {$x$};
+        \node [above] at (current axis.above origin) {$y$};
+
+        % Highlight Indifference Curve
+        \addplot[color = black, mark = *, only marks, mark size = 2pt] 
+        coordinates {(2,8) (4,4) (8,2)};
+
+        \addplot[color = black, dotted, thick] 
+          coordinates {(0, 8) (2, 8) (2, 0)};
+        \node [anchor = south west] at (axis cs:2, 8) {$A$};
+
+        \addplot[color = black, dotted, thick] 
+          coordinates {(0, 4) (4, 4) (4, 0)};
+        \node [anchor = south west] at (axis cs:4, 4) {$B$};
+
+        \addplot[color = black, dotted, thick] 
+          coordinates {(0, 2) (8, 2) (8, 0)};
+        \node [anchor = south west] at (axis cs:8, 2) {$C$};
+
+
+      \end{axis}
+    \end{tikzpicture}
+  \end{figure}
+\end{frame}
+
+% ------------------------------------------------------------------------------------------------
 
 %------------------------------------------------------------------------------
 \begin{frame}{Partial Derivatives}\label{main1}
